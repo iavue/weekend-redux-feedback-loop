@@ -8,7 +8,7 @@ function Supported() {
     const dispatch = useDispatch();
     const history = useHistory();
 
-    function storeTheInput() {
+    function storeTheInput(event) {
         event.preventDefault();
         
         // dispatch
@@ -28,9 +28,12 @@ function Supported() {
             <form onSubmit={storeTheInput}>
                 <input 
                     type="number" 
-                    placeholder="Supported?" 
+                    placeholder="supported rating" 
+                    min="1"
+                    max="5"
+                    name="supported"
                     value={newSupported.supported} 
-                    onChange={(event) => setSupported(event.target.value)} 
+                    onChange={(event) => setSupported({...newSupported, supported: event.target.value})} 
                     />
                 <button type="submit">Next</button>
             </form>

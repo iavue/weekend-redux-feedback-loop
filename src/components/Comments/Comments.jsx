@@ -8,7 +8,7 @@ function Comments() {
     const dispatch = useDispatch();
     const history = useHistory();
 
-    function storeTheInput() {
+    function storeTheInput(event) {
         event.preventDefault();
         
         // dispatch
@@ -28,9 +28,12 @@ function Comments() {
             <form onSubmit={storeTheInput}>
                 <input 
                     type="text" 
-                    placeholder="Comments?" 
+                    placeholder="comments" 
+                    min="1"
+                    max="5"
+                    name="comments"
                     value={newComments.comments} 
-                    onChange={(event) => setComments(event.target.value)} 
+                    onChange={(event) => setComments({...newComments, comments: event.target.value})} 
                     />
                 <button type="submit">Next</button>
             </form>

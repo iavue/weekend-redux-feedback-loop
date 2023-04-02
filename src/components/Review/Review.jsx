@@ -7,10 +7,13 @@ function Review() {
 
     const history = useHistory();
 
-    const feeling = useSelector(store => store.feelingInput);
-    const understanding = useSelector(store => store.understandingInput);
-    const supported = useSelector(store => store.supportedInput);
-    const comments = useSelector(store => store.commentsInput);
+    const feeling = useSelector(store => store.feelingInput.feeling);
+    const understanding = useSelector(store => store.understandingInput.understanding);
+    const supported = useSelector(store => store.supportedInput.supported);
+    const comments = useSelector(store => store.commentsInput.comments);
+
+    console.log('Feeling:', feeling);
+    console.log('Understanding:', understanding);
 
     let feedback = {
         feeling: feeling,
@@ -37,10 +40,10 @@ function Review() {
             <h2>Review Your Feedback</h2>
             <br />
             <ul>
-                <li>Feeling: {feeling.toString()}</li>
-                <li>Understanding: {understanding.toString()}</li>
-                <li>Supported: {supported.toString()}</li>
-                <li>Comments: {comments.toString()}</li>
+                <li>Feeling: {feeling}</li>
+                <li>Understanding: {understanding}</li>
+                <li>Supported: {supported}</li>
+                <li>Comments: {comments}</li>
             </ul>
             <button onClick={handleSubmit}>Submit</button>
         </div>

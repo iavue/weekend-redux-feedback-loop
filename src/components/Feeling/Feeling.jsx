@@ -49,13 +49,13 @@ function Feeling() {
                                                             |
                                                          property
                     */
-                    value={newFeeling.feeling} 
+                    value={newFeeling.feeling}
                     /* look at notes below */
                     onChange={(event) => setFeeling({...newFeeling, feeling: event.target.value})} 
                     />
                 <button type="submit">Next</button>
             </form>
-        </div>
+        </div> 
     )
 }
 

@@ -8,7 +8,7 @@ function Understanding() {
     const dispatch = useDispatch();
     const history = useHistory();
 
-    function storeTheInput() {
+    function storeTheInput(event) {
         event.preventDefault();
         
         // dispatch
@@ -28,9 +28,12 @@ function Understanding() {
             <form onSubmit={storeTheInput}>
                 <input 
                     type="number" 
-                    placeholder="Understanding?" 
+                    placeholder="understanding rating" 
+                    min="1"
+                    max="5"
+                    name="understanding"
                     value={newUnderstanding.understanding} 
-                    onChange={(event) => setUnderstanding(event.target.value)} 
+                    onChange={(event) => setUnderstanding({...newUnderstanding, understanding: event.target.value})} 
                     />
                 <button type="submit">Next</button>
             </form>

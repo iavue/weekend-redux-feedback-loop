@@ -7,6 +7,7 @@ function Review() {
 
     const history = useHistory();
 
+    // Since the properties in the Redux store are actually objects, we need to access their values using dot notation twice
     const feeling = useSelector(store => store.feelingInput.feeling);
     const understanding = useSelector(store => store.understandingInput.understanding);
     const supported = useSelector(store => store.supportedInput.supported);

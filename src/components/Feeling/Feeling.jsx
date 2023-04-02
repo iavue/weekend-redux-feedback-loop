@@ -15,7 +15,7 @@ function Feeling() {
         // dispatch
         dispatch({
             type: "STORE_THE_FEELING",
-            // what is payload again
+            // send newFeeling to the store 
             payload: newFeeling
         });
         console.log('newFeeling object:', newFeeling);

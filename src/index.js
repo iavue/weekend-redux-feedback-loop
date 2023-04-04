@@ -13,12 +13,18 @@ const feelingInput = (state = {}, action) => {
     if (action.type === "STORE_THE_FEELING") {
         return action.payload;
     }
+    else if (action.type === "RESET") {
+        return [];
+    }
     return state;
 }
 
 const understandingInput = (state = {}, action) => {
     if (action.type === "STORE_THE_UNDERSTANDING") {
         return action.payload;
+    }
+    else if (action.type === "RESET") {
+        return [];
     }
     return state;
 }
@@ -27,6 +33,9 @@ const supportedInput = (state = {}, action) => {
     if (action.type === "STORE_THE_SUPPORTED") {
         return action.payload;
     }
+    else if (action.type === "RESET") {
+        return [];
+    }
     return state;
 }
 
@@ -34,9 +43,16 @@ const commentsInput = (state = {}, action) => {
     if (action.type === "STORE_THE_COMMENTS") {
         return action.payload;
     }
+    else if (action.type === "RESET") {
+        return [];
+    }
     return state;
 }
 
+// const resetSurvey = (state = [], action) => {
+    
+//     return state;
+// }
 
 // Store
 const storeInstance = createStore(
@@ -45,7 +61,7 @@ const storeInstance = createStore(
         feelingInput,
         understandingInput,
         supportedInput,
-        commentsInput
+        commentsInput,
     }),
     applyMiddleware(logger)
 );

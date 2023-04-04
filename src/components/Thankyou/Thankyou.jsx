@@ -1,12 +1,17 @@
 import { useHistory } from 'react-router-dom'
+import { useDispatch } from 'react-redux';
 
 function Thankyou() {
 
     const history = useHistory();
+    const dispatch = useDispatch();
 
     const handleLeaveNewFeedback = () => {
         console.log('Inside handleLeaveNewFeedback()');
         // Reset the survey from the beginning
+        dispatch({
+            type: "RESET"
+        });
         history.push('/');
     }
     
